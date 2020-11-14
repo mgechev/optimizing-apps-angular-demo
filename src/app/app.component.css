@@ -1,0 +1,44 @@
+:host {
+  height: 100%;
+}
+
+mat-icon {
+  margin-left: 10px;
+  margin-right: 8px;
+}
+
+.container {
+  width: 100%;
+  height: calc(100% - 64px);
+}
+
+mat-drawer-content {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.hamburger {
+  outline: none;
+}
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after,
+.hamburger.is-active .hamburger-inner, .hamburger.is-active .hamburger-inner::before, .hamburger.is-active .hamburger-inner::after {
+  background-color: white;
+}
+
+.hamburger-box {
+  height: 18px;
+}
+
+nav {
+  padding: 20px;
+}
+
+nav a {
+  display: block;
+  font-size: 1.2em;
+  padding: 10px;
+}

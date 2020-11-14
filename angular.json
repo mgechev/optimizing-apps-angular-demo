@@ -28,6 +28,8 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "./node_modules/hamburgers/dist/hamburgers.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -91,6 +93,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -124,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "dashboard"
+  "defaultProject": "dashboard",
+  "cli": {
+    "analytics": "c157c09c-6887-4612-8405-c71f04cb783b"
+  }
 }

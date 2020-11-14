@@ -1,0 +1,38 @@
+:host {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 1em 1em;
+  grid-template-areas:
+    "line-chart line-chart line-chart"
+    "gauge bar-chart aggregate"
+    "data-table data-table data-table";
+}
+
+.line-chart { grid-area: line-chart; }
+
+.data-table { grid-area: data-table; }
+
+.gauge { grid-area: gauge; }
+
+.bar-chart { grid-area: bar-chart; }
+
+.aggregate { grid-area: aggregate; }
+
+
+/* For presentation only, no need to copy the code below */
+/* :host > * {
+  border: 1px solid red;
+  position: relative;
+}
+
+:host > *:after {
+  content: attr(class);
+  position: absolute;
+  top: 0;
+  left: 0;
+} */
+
+.table {
+  width: 100%;
+}
