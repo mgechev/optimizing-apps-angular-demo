@@ -83,7 +83,6 @@ export class HomeComponent {
       }
     }
     return total;
-    // return 1;
   }
 
   get popularLinks(): { text: string, href: string }[] {
@@ -95,7 +94,3 @@ export class HomeComponent {
     }));
   }
 }
-
-setInterval(() => {
-  // poll for updates
-}, 100);
