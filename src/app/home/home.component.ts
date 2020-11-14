@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 import { single, multi, barSingle, barMulti } from './chart.data';
 import { ELEMENT_DATA } from './table.data';
+import * as Comlink from 'comlink';
+import { StatsService } from './stats.service';
 
 @Component({
   selector: 'app-home',
@@ -11,6 +13,7 @@ import { ELEMENT_DATA } from './table.data';
 export class HomeComponent {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
+  statsCalculator: any;
 
   // Gauge
   single: any[] = [];
@@ -22,9 +25,10 @@ export class HomeComponent {
     domain: ['#5AA454', '#E44D25', '#CFC0BB', '#7aa3e5', '#a8385d', '#aae3f5'],
   };
 
-  constructor() {
+  constructor(private stats: StatsService) {
     Object.assign(this, { single, multi });
     Object.assign(this, { barSingle, barMulti });
+
   }
 
   onActivate(data: any): void {
@@ -75,15 +79,12 @@ export class HomeComponent {
     domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'],
   };
 
-  get aggregate(): number {
-    let total = 0;
-    for (let i = 0; i < 15000; i++) {
-      for (const el of ELEMENT_DATA) {
-        total += Math.log(el.weight ** 2);
-      }
+  get aggregate(): number|string {
+    const result = this.stats.calculate(ELEMENT_DATA);
+    if (typeof result === 'number') {
+      return result;
     }
-    return total;
-    // return 1;
+    return 'Calculating...';
   }
 
   get popularLinks(): { text: string, href: string }[] {
@@ -96,6 +97,6 @@ export class HomeComponent {
   }
 }
 
-setInterval(() => {
-  // poll for updates
-}, 100);
+// setInterval(() => {
+//   // poll for updates
+// }, 100);
