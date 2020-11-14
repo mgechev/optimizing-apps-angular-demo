@@ -5,6 +5,7 @@ import { MatTableModule } from '@angular/material/table';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     CommonModule,
     HomeRoutingModule,
     MatTableModule,
-    NgxChartsModule
+    NgxChartsModule,
+    FormsModule
   ]
 })
 export class HomeModule { }

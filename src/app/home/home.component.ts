@@ -77,11 +77,25 @@ export class HomeComponent {
 
   get aggregate(): number {
     let total = 0;
-    for (let i = 0; i < 15000; i ++) {
+    for (let i = 0; i < 15000; i++) {
       for (const el of ELEMENT_DATA) {
         total += Math.log(el.weight ** 2);
       }
     }
     return total;
+    // return 1;
+  }
+
+  get popularLinks(): { text: string, href: string }[] {
+    return ELEMENT_DATA.sort((a, b) => {
+      return a.weight - b.weight;
+    }).map((data) => ({
+      href: `https://example.com/${data.name}`,
+      text: data.name,
+    }));
   }
 }
+
+setInterval(() => {
+  // poll for updates
+}, 100);

@@ -1,5 +1,4 @@
 <div class="line-chart">
-
   <ngx-charts-area-chart
     [view]="lineChartView"
     [scheme]="lineChartColorScheme"
@@ -13,10 +12,10 @@
     [timeline]="timeline"
     [results]="multi">
   </ngx-charts-area-chart>
-
 </div>
+
 <div class="data-table">
-  <table mat-table [dataSource]="dataSource" class="table mat-elevation-z8">
+  <table style="width: 100%;" mat-table [dataSource]="dataSource" class="table mat-elevation-z8">
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
 
@@ -48,6 +47,7 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 </div>
+
 <div class="gauge">
   <ngx-charts-gauge
     [view]="gaugeView"
@@ -76,5 +76,27 @@
   </ngx-charts-bar-vertical>
 </div>
 <div class="aggregate">
+  <h1>Total score</h1>
   <var>{{ aggregate }}</var>
+</div>
+
+
+<div class="popular-links">
+  <ul>
+    <li *ngFor="let link of popularLinks"><a [href]="link.href">{{ link.text }}</a></li>
+  </ul>
+</div>
+
+
+<div class="popular-links">
+  <ul>
+    <li *ngFor="let link of popularLinks"><a [href]="link.href">{{ link.text }}</a></li>
+  </ul>
+</div>
+
+
+<div class="popular-links">
+  <ul>
+    <li *ngFor="let link of popularLinks"><a [href]="link.href">{{ link.text }}</a></li>
+  </ul>
 </div>

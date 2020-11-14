@@ -1,24 +1,39 @@
 :host {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: auto auto auto auto;
   gap: 1em 1em;
   grid-template-areas:
     "line-chart line-chart line-chart"
     "gauge bar-chart aggregate"
-    "data-table data-table data-table";
+    "data-table data-table data-table"
+    "popular-links popular-links popular-links";
 }
 
-.line-chart { grid-area: line-chart; }
+.line-chart {
+  grid-area: line-chart;
+}
 
-.data-table { grid-area: data-table; }
+.data-table {
+  grid-area: data-table;
+}
 
-.gauge { grid-area: gauge; }
+.gauge {
+  grid-area: gauge;
+}
 
-.bar-chart { grid-area: bar-chart; }
+.bar-chart {
+  grid-area: bar-chart;
+}
 
-.aggregate { grid-area: aggregate; }
+.aggregate {
+  grid-area: aggregate;
+  border: 1px solid #ccc;
+}
 
+.popular-links {
+  grid-area: popular-links;
+}
 
 /* For presentation only, no need to copy the code below */
 /* :host > * {
@@ -33,6 +48,7 @@
   left: 0;
 } */
 
-.table {
+.table,
+table {
   width: 100%;
 }
