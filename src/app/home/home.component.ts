@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 
 import { single, multi, barSingle, barMulti } from './chart.data';
 import { ELEMENT_DATA } from './table.data';
-import * as Comlink from 'comlink';
 import { StatsService } from './stats.service';
 
 @Component({
