@@ -1,7 +1,6 @@
 <div class="line-chart">
   <ngx-charts-area-chart
     [view]="lineChartView"
-    [scheme]="lineChartColorScheme"
     [legend]="lineChartLegend"
     [showXAxisLabel]="showXAxisLabel"
     [showYAxisLabel]="showYAxisLabel"
@@ -51,10 +50,8 @@
 <div class="gauge">
   <ngx-charts-gauge
     [view]="gaugeView"
-    [scheme]="gaugeColorScheme"
     [results]="single"
     [legend]="gaugeLegend"
-    [legendPosition]="legendPosition"
     (activate)="onActivate($event)"
     (deactivate)="onDeactivate($event)"
     >
@@ -63,7 +60,6 @@
 <div class="bar-chart">
   <ngx-charts-bar-vertical
     [view]="barView"
-    [scheme]="barColorScheme"
     [results]="barSingle"
     [gradient]="barGradient"
     [xAxis]="barShowXAxis"
